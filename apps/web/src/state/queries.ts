@@ -299,7 +299,12 @@ export function useProjectPathSearch(
 }
 
 export function useComposerPathSearch(target: ComposerPathSearchTarget) {
-  return useProjectPathSearch(target, COMPOSER_PATH_SEARCH_LIMIT);
+  // The server supports empty-query browses (frecency-ordered entries), so
+  // typing "@" alone surfaces recent files immediately — matching the file
+  // picker's initial results.
+  return useProjectPathSearch(target, COMPOSER_PATH_SEARCH_LIMIT, {
+    allowEmptyQuery: true,
+  });
 }
 
 interface ProjectContentSearchTarget {
