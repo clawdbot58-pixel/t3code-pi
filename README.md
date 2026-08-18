@@ -4,8 +4,8 @@
 > **This is a community fork of [T3 Code](https://github.com/pingdotgg/t3code)** that adds a
 > first-class provider driver for [pi](https://github.com/earendil-works/pi-coding-agent), the
 > local coding agent by the Earendil Works team. With this fork you can control pi sessions from
-> T3 Code's web, mobile, and desktop apps, alongside Claude Code, Codex, Cursor, Grok Build, and
-> OpenCode.
+> T3 Code's web, mobile, and desktop apps, alongside the providers upstream T3 Code already
+> supports (Codex, Claude Code, Cursor, Grok Build, and OpenCode).
 >
 > The pi provider is implemented as a built-in driver (`PiDriver`), so it shows up in the provider
 > picker and Settings like any other provider. See [docs/user/providers-pi.md](./docs/user/providers-pi.md)
