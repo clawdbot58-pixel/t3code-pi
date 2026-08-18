@@ -127,3 +127,17 @@ vp i
 Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening an issue or PR.
 
 Need support? Join the [Discord](https://discord.gg/jn4EGJjrvv).
+
+## Syncing with upstream
+
+This fork's history is rooted at a self-contained snapshot of upstream
+[T3 Code](https://github.com/pingdotgg/t3code) (at `c9063f03`), so the repository has no
+dependency on the upstream git history. To pull newer upstream changes:
+
+```bash
+git remote add upstream https://github.com/pingdotgg/t3code   # once
+git fetch upstream
+git rebase --onto upstream/main <fork-base-commit> publish     # fork base = first commit of this repo
+# resolve conflicts, then:
+git push origin publish:main
+```
