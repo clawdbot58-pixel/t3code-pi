@@ -381,6 +381,26 @@ export function makePiAdapter(piSettings: PiSettings, options?: PiAdapterLiveOpt
         const title = typeof record.title === "string" ? record.title : method;
         if (method === "notify") {
           const message = typeof record.message === "string" ? record.message : title;
+          const notifyType = typeof record.notifyType === "string" ? record.notifyType : "info";
+          // Extension notifications are display-only TUI status lines (e.g. the
+          // pi-timestamp extension's "Sent HH:MM:SS" / "Done at HH:MM:SS · …").
+          // The T3 Code UI renders message timestamps natively, so "info"
+          // notifications are suppressed instead of surfacing as failed
+          // work-log entries. Only real warnings/errors surface.
+          if (notifyType === "info") {
+            yield* Effect.logDebug(`pi extension info notification suppressed: ${message}`);
+            return;
+          }
+          if (notifyType === "error") {
+            yield* offerRuntimeEvent({
+              type: "runtime.error",
+              ...(yield* makeEventStamp()),
+              provider: PROVIDER,
+              threadId: ctx.threadId,
+              payload: { message: `pi extension: ${message}`, class: "provider_error" },
+            });
+            return;
+          }
           yield* offerRuntimeEvent({
             type: "runtime.warning",
             ...(yield* makeEventStamp()),

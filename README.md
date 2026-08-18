@@ -15,6 +15,14 @@ T3 Code is an "agent harness control surface". It enables control of the agents 
 
 Works with your subscriptions on Claude Code, Codex, Cursor, Grok Build, OpenCode, and Pi. If they're set up on your computer, T3 Code can control them.
 
+## Experimental status
+
+This fork is experimental. Known quirks:
+
+- **Slow first launch on Linux** — the desktop app can take a while to load initially. Give it a minute before assuming it is stuck.
+- **DevTools may open on launch** — the desktop app sometimes starts with the F12 developer-tools panel open. Just close it and use the app normally.
+- **Extension notifications are suppressed** — display-only pi extension notifications (for example `@hk_net/pi-timestamp`'s `Sent HH:MM:SS` / `Done at HH:MM:SS · …` lines) do not appear in the T3 Code work log, because the UI renders message timestamps natively. They still show in the pi terminal UI.
+
 ## "Wait, what are you selling me?"
 
 Nothing. We built T3 Code because we wanted the best possible development experience with agents. We were inspired by existing solutions like the Codex desktop app, Conductor, Claude Desktop and Cursor Glass, but none met our bar.

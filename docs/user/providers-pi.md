@@ -38,3 +38,11 @@ keychain), so no login command is needed here.
 - Pi-backed text generation for commit messages, PR content, branch names, and thread titles.
 - Provider status via `pi --version` (shown in Settings).
 - A pi entry in the provider picker with its icon across web, desktop, and mobile.
+
+## Extension notifications
+
+Display-only pi extension notifications (`ui.notify` with kind `info`, such as the
+[`@hk_net/pi-timestamp`](https://github.com/hknet/pi-extensions/tree/main/packages/pi-timestamp)
+extension's `Sent HH:MM:SS` / `Done at HH:MM:SS` lines) are suppressed in the T3 Code work log,
+because the UI renders message timestamps natively. They still appear in the pi terminal UI.
+Real extension warnings and errors (kind `warning` / `error`) still surface as work-log entries.
