@@ -1,0 +1,41 @@
+# Trust list for this repository.
+#
+# External contributors listed here are treated as trusted by the vouch
+# workflow. Collaborators with write access are automatically trusted and
+# do not need to be duplicated in this file.
+#
+# Syntax:
+#   github:username
+#   -github:username reason for denouncement
+#
+# Keep entries sorted alphabetically.
+github:adityavardhansharma
+github:binbandit
+github:chrisdeeming
+github:chuks-qua
+github:cursoragent
+github:gbarros-dev
+github:gfsaaser24
+github:github-actions[bot]
+github:hwanseoc
+github:jamesx0416
+github:jasonLaster
+github:JoeEverest
+github:maria-rcks
+github:nmggithub
+github:Noojuno
+github:notkainoa
+github:PatrickBauer
+github:realAhmedRoach
+github:saphid
+github:shiroyasha9
+github:StiensWout
+github:Yash-Singh1
+github:eggfriedrice24
+github:Ymit24
+github:shivamhwp
+github:jappyjan
+github:justsomelegs
+github:UtkarshUsername
+github:SunkenInTime
+github:bil0000
